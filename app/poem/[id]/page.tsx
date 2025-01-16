@@ -4,7 +4,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
-export default async function Page({ params }: { params: { id: string } }) {
+type Params = Promise<{ id: string }>;
+
+export default async function Page({ params }: { params: Params }) {
   const { id } = await params;
   const data = await getPoemWithAdjacent(id);
   console.log(data);
