@@ -1,6 +1,6 @@
 import { getPoemWithAdjacent } from '@/api';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, Home, Undo2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Undo2 } from 'lucide-react';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
