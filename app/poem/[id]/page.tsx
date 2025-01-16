@@ -1,6 +1,6 @@
 import { getPoemWithAdjacent } from '@/api';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Home, Undo2 } from 'lucide-react';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
@@ -15,8 +15,18 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <title>{poem?.title}</title>
-      <div className='min-h-screen p-14 mx-auto w-full min-w-0 max-w-4xl relative transform'>
-        <main className=''>
+      <div className='min-h-screen '>
+        <div className='sticky top-0 z-10 bg-white w-full shadow-md '>
+          <div className='mx-auto w-full min-w-0 max-w-4xl h-14 flex items-center'>
+            <Link href='/' className=''>
+              <Button variant='ghost' size='icon'>
+                <Undo2 size={36} />
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        <main className='px-14 mt-6 mx-auto w-full min-w-0 max-w-4xl relative transform'>
           <h1 className='text-3xl text-center font-bold mb-6 text-blue-600'>
             {poem?.title}
           </h1>
